@@ -40,19 +40,19 @@ export const projects = [
     title: 'Calculator',
     description: 'A polished calculator with keyboard support, animations, and precision controls.',
     tech: ['React', 'CSS'],
-    github: 'https://github.com/rkishore3333/calculator',
+    github: 'https://github.com/kishorejarvis/Calculator',
     demo: '#projects',
   },
   {
     title: 'TODO App',
     description: 'A responsive task manager with add, edit, and completion tracking capabilities.',
     tech: ['React', 'JavaScript'],
-    github: 'https://github.com/rkishore3333/todo-app',
+    github: 'https://github.com/kishorejarvis/TODO/tree/main',
     demo: '#projects',
   },
 ];
 
 export const socials = [
-  { name: 'GitHub', href: 'https://github.com/rkishore3333' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/rkishore-3333' },
+  { name: 'GitHub', href: 'https://github.com/kishorejarvis' },
+  { name: 'LinkedIn', href: 'https://linkedin.com/in/kishorejarvis' },
 ];

@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FiArrowUpRight, FiDownload, FiMail, FiMenu, FiX ,} from 'react-icons/fi';
+import { FiArrowUpRight, FiMail, FiMenu, FiX, } from 'react-icons/fi';
 import SectionTitle from './components/SectionTitle.jsx';
 import SkillCard from './components/SkillCard.jsx';
 import ProjectCard from './components/ProjectCard.jsx';
@@ -10,6 +10,8 @@ import { navLinks, skillGroups, experiences, projects, socials } from './data/po
 function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [resumeOpen, setResumeOpen] = useState(false);
+  const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem('theme');
@@ -28,6 +30,22 @@ function App() {
       window.localStorage.setItem('theme', 'light');
     }
   }, [darkMode]);
+
+  useEffect(() => {
+    const handleEscape = (event) => {
+      if (event.key === 'Escape') {
+        setResumeOpen(false);
+      }
+    };
+
+    document.body.style.overflow = resumeOpen ? 'hidden' : '';
+    window.addEventListener('keydown', handleEscape);
+
+    return () => {
+      document.body.style.overflow = '';
+      window.removeEventListener('keydown', handleEscape);
+    };
+  }, [resumeOpen]);
 
   return (
     <div className="min-h-screen bg-slate-50 text-slate-900 transition-colors duration-500 dark:bg-slate-950 dark:text-slate-100">
@@ -89,7 +107,7 @@ function App() {
                 Building modern, responsive web experiences with React and Node.
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
-                I am R. Kishore, a MERN Stack developer from Erode, Tamil Nadu. I specialize in polished frontend design, API-driven backends, and elegant JavaScript applications.
+                I am R. Kishore, a MERN Stack developer . I specialize in polished frontend design, API-driven backends, and elegant JavaScript applications.
               </p>
               <div className="mt-10 flex flex-wrap gap-4">
                 <a
@@ -99,23 +117,14 @@ function App() {
                   <FiMail className="h-4 w-4" />
                   Contact Me
                 </a>
-                <a
-                  href={`${import.meta.env.BASE_URL}resume.pdf`}
-                  download
+                <button
+                  type="button"
+                  onClick={() => window.open('/resume.pdf', '_blank')}
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-cyan-400 hover:bg-cyan-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
                 >
-                  <FiDownload className="h-4 w-4" />
-                  Download Resume
-                </a>
-                <a
-                  href={`${import.meta.env.BASE_URL}resume.pdf`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-cyan-400 hover:bg-cyan-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
-                >
-                  <FiDownload className="h-4 w-4" />
+                  <FiArrowUpRight className="h-4 w-4" />
                   View Resume
-                </a>
+                </button>
               </div>
             </div>
             <div className="relative z-10 flex flex-1 items-center justify-center">
@@ -274,6 +283,38 @@ function App() {
           </div>
         </div>
       </footer>
+
+      {resumeOpen && (
+        <div
+          className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/80 p-4 backdrop-blur-sm"
+          role="dialog"
+          aria-modal="true"
+          aria-label="Resume preview"
+          onClick={() => setResumeOpen(false)}
+        >
+          <div
+            className="flex h-[88vh] w-full max-w-5xl flex-col overflow-hidden rounded-3xl border border-white/20 bg-white shadow-2xl dark:border-slate-700 dark:bg-slate-950"
+            onClick={(event) => event.stopPropagation()}
+          >
+            <div className="flex items-center justify-between border-b border-slate-200 px-5 py-4 dark:border-slate-800">
+              <p className="text-sm font-semibold uppercase tracking-[0.24em] text-slate-600 dark:text-slate-300">Resume</p>
+              <button
+                type="button"
+                className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-slate-100 text-slate-700 transition hover:bg-slate-200 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
+                onClick={() => setResumeOpen(false)}
+                aria-label="Close resume preview"
+              >
+                <FiX className="h-5 w-5" />
+              </button>
+            </div>
+            <iframe
+              src={resumeUrl}
+              title="Resume preview"
+              className="h-full w-full bg-white"
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 }
