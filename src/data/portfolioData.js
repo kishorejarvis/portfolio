@@ -53,6 +53,6 @@ export const projects = [
 ];
 
 export const socials = [
-  { name: 'GitHub', href: 'https://github.com/kishorejarvis' },
-  { name: 'LinkedIn', href: 'https://linkedin.com/in/kishorejarvis' },
+  {
+       name: 'LinkedIn', href: 'https://linkedin.com/in/kishorejarvis' },
 ];

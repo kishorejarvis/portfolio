@@ -11,7 +11,8 @@ function App() {
   const [darkMode, setDarkMode] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
   const [resumeOpen, setResumeOpen] = useState(false);
-  const resumeUrl = `${import.meta.env.BASE_URL}resume.pdf`;
+
+  const resumeUrl = `${import.meta.env.BASE_URL}Resume.pdf`;
 
   useEffect(() => {
     const storedTheme = window.localStorage.getItem('theme');
@@ -119,7 +120,7 @@ function App() {
                 </a>
                 <button
                   type="button"
-                  onClick={() => window.open('/resume.pdf', '_blank')}
+                  onClick={() => setResumeOpen(true)} // <--- Custom Popup Modal-ah open seiyya true aakkugirom
                   className="inline-flex items-center gap-2 rounded-full border border-slate-200 bg-white px-6 py-3 text-sm font-semibold text-slate-950 transition hover:border-cyan-400 hover:bg-cyan-50 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-100 dark:hover:bg-slate-800"
                 >
                   <FiArrowUpRight className="h-4 w-4" />
@@ -138,12 +139,12 @@ function App() {
                   </p>
                   <div className="mt-8 grid gap-4 sm:grid-cols-2">
                     <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-5 text-left">
-                      <p className="text-sm text-slate-400">Location</p>
-                      <p className="mt-2 text-lg font-semibold text-white">Erode, Tamil Nadu</p>
+                      <p className="text-sm text-slate-400">Phone</p>
+                      <p className="mt-2 text-lg font-semibold text-white">+91 8838566593 </p>
                     </div>
                     <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-5 text-left">
                       <p className="text-sm text-slate-400">Email</p>
-                      <p className="mt-2 text-lg font-semibold text-white">rkishorekishore3333@gmail.com</p>
+                      <p className="mt-4 text-lg font-semibold text-white">rkishorekishore3333@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -161,7 +162,7 @@ function App() {
           <div className="grid gap-8 lg:grid-cols-[1.5fr_0.7fr]">
             <div className="space-y-6 rounded-3xl border border-slate-200/80 bg-white/80 p-10 shadow-soft backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/70">
               <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                I am a Computer Engineering graduate with MERN Stack internship experience and 2 years of industry experience as a Zone Leader and Process Developer. I enjoy crafting responsive React applications, building Node.js powered APIs, and working with MongoDB to deliver full-stack results.
+                I am a Computer graduate with MERN Stack internship experience.And 2 years of industry experience as a Zone Leader and Process Developer at Laksmi life sciences pvt Ltd (CBE). I enjoy crafting responsive React applications, building Node.js powered APIs, and working with MongoDB to deliver full-stack results.
               </p>
               <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                 My experience includes building responsive interfaces, writing clean backend services, collaborating with teams using Git, and delivering reliable projects that scale. I am currently seeking software developer opportunities where I can grow and contribute to meaningful products.
@@ -233,7 +234,7 @@ function App() {
             <div className="rounded-3xl border border-slate-200/80 bg-white/80 p-10 shadow-soft backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/70">
               <h3 className="text-2xl font-semibold text-slate-950 dark:text-slate-100">Let’s build something great.</h3>
               <p className="mt-4 text-slate-600 dark:text-slate-300">
-                I’m available for MERN stack roles, freelance projects, and collaboration on modern web applications.
+                I’m available for MERN stack roles and collaboration on modern web applications.
               </p>
               <div className="mt-8 space-y-5">
                 <div className="rounded-3xl bg-slate-50 p-5 dark:bg-slate-950">
@@ -241,17 +242,21 @@ function App() {
                   <a href="mailto:rkishorekishore3333@gmail.com" className="mt-2 block text-lg font-semibold text-slate-900 dark:text-slate-100">
                     rkishorekishore3333@gmail.com
                   </a>
+                  <p className="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">Phone</p>
+                  <a href="tel:+919445566778" className="mt-2 block text-lg font-semibold text-slate-900 dark:text-slate-100">
+                    +91 8838566593
+                  </a>
                 </div>
                 <div className="rounded-3xl bg-slate-50 p-5 dark:bg-slate-950">
                   <p className="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">Location</p>
-                  <p className="mt-2 text-lg font-semibold text-slate-900 dark:text-slate-100">Erode, Tamil Nadu, India</p>
+                  <p className="mt-2 text-lg font-semibold text-slate-900 dark:text-slate-100">19,Maren street, 1st ward,kugalur-638313. Erode, Tamil Nadu, India</p>
                 </div>
               </div>
             </div>
             <div className="rounded-3xl border border-slate-200/80 bg-gradient-to-br from-cyan-50 via-slate-100 to-white p-10 shadow-soft dark:border-slate-800/80 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
               <div className="text-slate-950 dark:text-slate-100">
                 <h3 className="text-2xl font-semibold">Available for new roles</h3>
-                <p className="mt-4 text-slate-600 dark:text-slate-300">You can contact me directly over email or connect on GitHub and LinkedIn.</p>
+                <p className="mt-4 text-slate-600 dark:text-slate-300">You can contact me directly over email or connect on LinkedIn.</p>
                 <div className="mt-8 flex flex-wrap gap-4">
                   {socials.map((social) => (
                     <a
@@ -273,7 +278,7 @@ function App() {
 
       <footer className="border-t border-slate-200/80 bg-white/90 px-6 py-8 text-slate-600 dark:border-slate-800/80 dark:bg-slate-950/90 dark:text-slate-400">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 R. Kishore. Built with React, Tailwind, and Framer Motion.</p>
+          <p>© 2026 R. Kishore. Built with React, Tailwind.</p>
           <div className="flex flex-wrap items-center gap-4">
             {socials.map((social) => (
               <a key={social.name} href={social.href} target="_blank" rel="noreferrer" className="font-semibold text-slate-700 transition hover:text-cyan-600 dark:text-slate-300">
@@ -308,7 +313,7 @@ function App() {
               </button>
             </div>
             <iframe
-              src={resumeUrl}
+              src={`https://docs.google.com/gview?url=${window.location.origin}${resumeUrl}&embedded=true`}
               title="Resume preview"
               className="h-full w-full bg-white"
             />
