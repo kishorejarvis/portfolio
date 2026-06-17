@@ -96,8 +96,8 @@ function App() {
         )}
       </header>
 
-      <main className="relative overflow-hidden">
-        <section id="home" className="relative overflow-hidden bg-hero-glow px-6 py-20 sm:px-8 lg:px-10">
+      <main className="relative">
+        <section id="home" className="relative bg-hero-glow px-6 py-20 sm:px-8 lg:px-10">
           <div className="absolute inset-x-0 top-0 h-64 bg-gradient-to-b from-cyan-500/20 to-transparent blur-3xl" />
           <div className="mx-auto flex max-w-7xl flex-col gap-16 lg:flex-row lg:items-center lg:gap-24">
             <div className="relative z-10 max-w-2xl">
@@ -105,7 +105,7 @@ function App() {
                 MERN Stack Developer
               </span>
               <h1 className="mt-8 text-5xl font-bold tracking-tight text-slate-950 dark:text-white sm:text-6xl">
-                Building modern, responsive web experiences with React and Node.
+                Building responsive and scalable web applications with the MERN Stack
               </h1>
               <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-600 dark:text-slate-300">
                 I am R. Kishore, a MERN Stack developer . I specialize in polished frontend design, API-driven backends, and elegant JavaScript applications.
@@ -128,23 +128,23 @@ function App() {
                 </button>
               </div>
             </div>
-            <div className="relative z-10 flex flex-1 items-center justify-center">
-              <div className="relative overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-8 shadow-soft shadow-cyan-500/10 dark:border-slate-700">
+            <div className="relative z-10 flex w-full flex-1 min-w-0 items-center justify-center">
+              <div className="relative w-full max-w-xl overflow-hidden rounded-[2rem] border border-white/70 bg-gradient-to-br from-slate-900 via-slate-950 to-slate-900 p-8 shadow-soft shadow-cyan-500/10 dark:border-slate-700">
                 <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,_rgba(59,130,246,0.45),_transparent_40%)]" />
                 <div className="relative rounded-[1.75rem] border border-white/10 bg-slate-950/95 p-10 text-center shadow-2xl shadow-slate-950/20">
                   <p className="text-sm uppercase tracking-[0.35em] text-cyan-300">Featured value</p>
-                  <h2 className="mt-6 text-3xl font-semibold text-white">Creative, reliable, and ready for your next project.</h2>
+                  <h2 className="mt-6 text-3xl font-semibold text-white leading-tight">Creative, reliable, and ready for your next project.</h2>
                   <p className="mt-4 text-slate-300">
                     I deliver polished React interfaces, solid REST API integrations, and clean code patterns on every build.
                   </p>
-                  <div className="mt-8 grid gap-4 sm:grid-cols-2">
-                    <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-5 text-left">
+                  <div className="mt-8 flex w-full flex-col gap-4">
+                    <div className="w-full rounded-3xl border border-slate-800/80 bg-slate-900/80 p-5 text-left">
                       <p className="text-sm text-slate-400">Phone</p>
-                      <p className="mt-2 text-lg font-semibold text-white">+91 8838566593 </p>
+                      <p className="mt-2 text-lg font-semibold text-white">+91 8838566593</p>
                     </div>
-                    <div className="rounded-3xl border border-slate-800/80 bg-slate-900/80 p-5 text-left">
+                    <div className="w-full rounded-3xl border border-slate-800/80 bg-slate-900/80 p-5 text-left">
                       <p className="text-sm text-slate-400">Email</p>
-                      <p className="mt-4 text-lg font-semibold text-white">rkishorekishore3333@gmail.com</p>
+                      <p className="mt-4 break-words text-lg font-semibold text-white">rkishorekishore3333@gmail.com</p>
                     </div>
                   </div>
                 </div>
@@ -157,12 +157,15 @@ function App() {
           <SectionTitle
             number="1"
             title="About"
-            description="Background in Computer Engineering with internship and industry experience. Focused on building scalable applications and creating polished user experiences."
+            description="UG graduate and aspiring MERN Stack Developer with hands-on project experience in full-stack web development. Passionate about building scalable web applications and continuously learning modern technologies."
           />
           <div className="grid gap-8 lg:grid-cols-[1.5fr_0.7fr]">
             <div className="space-y-6 rounded-3xl border border-slate-200/80 bg-white/80 p-10 shadow-soft backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/70">
+              <h3 className="text-2xl font-bold text-slate-900 dark:text-white">
+                Professional Summary
+              </h3>
               <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
-                I am a Computer graduate with MERN Stack internship experience.And 2 years of industry experience as a Zone Leader and Process Developer at Laksmi life sciences pvt Ltd (CBE). I enjoy crafting responsive React applications, building Node.js powered APIs, and working with MongoDB to deliver full-stack results.
+                I am an aspiring MERN Stack Developer with internship experience in full-stack web development and 2 years of industry experience as a Zone Leader and Team coordinator at Lakshmi Life Sciences Pvt Ltd., Coimbatore. I am passionate about building responsive web applications, developing scalable backend systems, and creating user-focused digital solutions.
               </p>
               <p className="text-base leading-8 text-slate-700 dark:text-slate-300">
                 My experience includes building responsive interfaces, writing clean backend services, collaborating with teams using Git, and delivering reliable projects that scale. I am currently seeking software developer opportunities where I can grow and contribute to meaningful products.
@@ -171,10 +174,10 @@ function App() {
             <div className="space-y-6 rounded-3xl border border-slate-200/80 bg-slate-50/80 p-8 shadow-soft dark:border-slate-800/80 dark:bg-slate-900/70">
               <div className="rounded-3xl bg-gradient-to-br from-cyan-500/15 via-violet-500/10 to-slate-50 p-6 text-slate-900 dark:from-cyan-400/15 dark:via-violet-500/10 dark:to-slate-900 dark:text-white">
                 <span className="text-sm uppercase tracking-[0.3em] text-cyan-500">Experience</span>
-                <p className="mt-4 text-2xl font-semibold">2+ years of professional teamwork and process delivery.</p>
-                <p className="mt-3 text-slate-600 dark:text-slate-300">Strong communicator, dependable problem solver, and a proactive developer mindset.</p>
+                <p className="mt-4 text-2xl font-semibold">2+ years of professional experience at Lakshmi Life Sciences Pvt. Ltd., Coimbatore.</p>
+                <p className="mt-3 text-slate-600 dark:text-slate-300">Experienced in team coordination, process management, and operational efficiency.</p>
               </div>
-              <div className="rounded-3xl border border-slate-200/90 bg-white/90 p-6 dark:border-slate-800/90 dark:bg-slate-950/80">
+              <div className="rounded-3xl border border-slate-200/90 bg-gradient-to-br from-cyan-500/15 via-violet-500/10 to-slate-50 p-6 dark:border-slate-800/90 dark:bg-slate-950/80">
                 <h3 className="text-sm uppercase tracking-[0.3em] text-slate-500 dark:text-slate-400">Qualifications</h3>
                 <ul className="mt-4 space-y-3 text-slate-700 dark:text-slate-300">
                   <li>• BCA</li>
@@ -215,7 +218,7 @@ function App() {
           <SectionTitle
             number="4"
             title="Projects"
-            description="Featured projects that highlight React, MERN architecture, and polished UX details."
+            description="A collection of projects showcasing MERN stack skills, modern UI design, and full-stack development expertise."
           />
           <div className="grid gap-6 xl:grid-cols-3">
             {projects.map((project) => (
@@ -228,13 +231,14 @@ function App() {
           <SectionTitle
             number="5"
             title="Contact"
-            description="Reach out for a new role, contract work, or a collaborative project. I am open to opportunities and ready to contribute."
+            description="  Looking for opportunities as a MERN Stack Developer where I can apply my skills, contribute to impactful projects, and continue learning.."
           />
           <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr]">
             <div className="rounded-3xl border border-slate-200/80 bg-white/80 p-10 shadow-soft backdrop-blur-xl dark:border-slate-800/80 dark:bg-slate-900/70">
               <h3 className="text-2xl font-semibold text-slate-950 dark:text-slate-100">Let’s build something great.</h3>
               <p className="mt-4 text-slate-600 dark:text-slate-300">
-                I’m available for MERN stack roles and collaboration on modern web applications.
+                Passionate MERN Stack Developer eager to contribute to innovative web applications and grow through real-world development opportunities.
+                ``` 🚀
               </p>
               <div className="mt-8 space-y-5">
                 <div className="rounded-3xl bg-slate-50 p-5 dark:bg-slate-950">
@@ -278,7 +282,7 @@ function App() {
 
       <footer className="border-t border-slate-200/80 bg-white/90 px-6 py-8 text-slate-600 dark:border-slate-800/80 dark:bg-slate-950/90 dark:text-slate-400">
         <div className="mx-auto flex max-w-7xl flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">
-          <p>© 2026 R. Kishore. Built with React, Tailwind.</p>
+          <p>© 2026 R. Kishore | MERN Stack Developer</p>
           <div className="flex flex-wrap items-center gap-4">
             {socials.map((social) => (
               <a key={social.name} href={social.href} target="_blank" rel="noreferrer" className="font-semibold text-slate-700 transition hover:text-cyan-600 dark:text-slate-300">
